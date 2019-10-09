@@ -2,7 +2,7 @@
 {% block content %}
         <h1>Build a blog</h1>
 {%for post in posts %}
-    <h2>{{post.title}}</h2>
+    <h2><a href="{{url_for('blog_itself', blog_id=post.id)}}">{{post.title}}</a></h2>
     <p>{{post.body}}</p>
     
 {% endfor %}

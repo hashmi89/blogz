@@ -50,6 +50,10 @@ def newpost():
     else:
         return render_template('newpost.html')
 
+@app.route("/blog/<blog_id>")
+def blog_itself(blog_id):
+    post = Blog.query.get_or_404(blog_id)
+    return render_template('blog_itself.html', post=post)
 
 if __name__ == '__main__':
     app.run()
